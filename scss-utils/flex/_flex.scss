@@ -1,0 +1,35 @@
+// Justify-Generator:
+
+@include flex_and_display_utility_generator("justify-content", $justify-positions, "", "evenly");
+@include flex_and_display_utility_generator("justify-content", $justify-positions, xs, "evenly");
+@include flex_and_display_utility_generator("justify-content", $justify-positions, sm, "evenly");
+@include flex_and_display_utility_generator("justify-content", $justify-positions, md, "evenly");
+@include flex_and_display_utility_generator("justify-content", $justify-positions, lg, "evenly");
+@include flex_and_display_utility_generator("justify-content", $justify-positions, xl, "evenly");
+
+// Align-Generator:
+
+@include flex_and_display_utility_generator("align-items", $align-positions, "", "baseline");
+@include flex_and_display_utility_generator("align-items", $align-positions, xs, "baseline");
+@include flex_and_display_utility_generator("align-items", $align-positions, sm, "baseline");
+@include flex_and_display_utility_generator("align-items", $align-positions, md, "baseline");
+@include flex_and_display_utility_generator("align-items", $align-positions, lg, "baseline");
+@include flex_and_display_utility_generator("align-items", $align-positions, xl, "baseline");
+
+// Direction-Generator:
+
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, "", "row-reverse");
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, xs, "row-reverse");
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, sm, "row-reverse");
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, md, "row-reverse");
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, lg, "row-reverse");
+@include flex_and_display_utility_generator("flex-direction", $flex-direction, xl, "row-reverse");
+
+// Flex-Wrap-Generator:
+
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, "", "wrap");
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, xs, "wrap");
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, sm, "wrap");
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, md, "wrap");
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, lg, "wrap");
+@include flex_and_display_utility_generator("flex-wrap", $flex-wrap, xl, "wrap");

@@ -1,0 +1,7 @@
+.full-width{
+      width: 100%;
+}
+
+@include text-align(left);
+@include text-align(center);
+@include text-align(right);

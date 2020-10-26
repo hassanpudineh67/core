@@ -1,0 +1,417 @@
+// Flex and Utility
+@mixin flex_and_display_utility_generator($prop, $arr, $size, $keyword) {
+      @if $size == xs {
+            @media screen and #{$xs} {
+                  @each $mod, $dir in $arr {
+                        @if $keyword == "evenly" {
+                              .justify-xs-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "wrap" {
+                              .flex-xs-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "baseline" {
+                              .align-xs-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "row-reverse" {
+                              .flex-xs-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "block" {
+                              .#{$mod}-xs {
+                                    #{$prop}: #{$dir};
+                              }
+                        }
+                  }
+            }
+      } @else if $size == sm {
+            @media screen and #{$sm} {
+                  @each $mod, $dir in $arr {
+                        @if $keyword == "evenly" {
+                              .justify-sm-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "wrap" {
+                              .flex-sm-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "baseline" {
+                              .align-sm-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "row-reverse" {
+                              .flex-sm-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "block" {
+                              .#{$mod}-sm {
+                                    #{$prop}: #{$dir};
+                              }
+                        }
+                  }
+            }
+      } @else if $size == md {
+            @media screen and #{$md} {
+                  @each $mod, $dir in $arr {
+                        @if $keyword == "evenly" {
+                              .justify-md-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "wrap" {
+                              .flex-md-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "baseline" {
+                              .align-md-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "row-reverse" {
+                              .flex-md-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "block" {
+                              .#{$mod}-md {
+                                    #{$prop}: #{$dir};
+                              }
+                        }
+                  }
+            }
+      } @else if $size == lg {
+            @media screen and #{$lg} {
+                  @each $mod, $dir in $arr {
+                        @if $keyword == "evenly" {
+                              .justify-lg-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "wrap" {
+                              .flex-lg-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "baseline" {
+                              .align-lg-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "row-reverse" {
+                              .flex-lg-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "block" {
+                              .#{$mod}-lg {
+                                    #{$prop}: #{$dir};
+                              }
+                        }
+                  }
+            }
+      } @else if $size == xl {
+            @media screen and #{$xl} {
+                  @each $mod, $dir in $arr {
+                        @if $keyword == "evenly" {
+                              .justify-xl-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "wrap" {
+                              .flex-xl-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "baseline" {
+                              .align-xl-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "row-reverse" {
+                              .flex-xl-#{$mod} {
+                                    #{$prop}: #{$dir};
+                              }
+                        } @else if $keyword == "block" {
+                              .#{$mod}-xl {
+                                    #{$prop}: #{$dir};
+                              }
+                        }
+                  }
+            }
+      } @else if $size == "" {
+            @each $mod, $dir in $arr {
+                  @if $keyword == "evenly" {
+                        .justify-#{$mod} {
+                              #{$prop}: #{$dir};
+                        }
+                  } @else if $keyword == "wrap" {
+                        .flex-#{$mod} {
+                              #{$prop}: #{$dir};
+                        }
+                  } @else if $keyword == "baseline" {
+                        .align-#{$mod} {
+                              #{$prop}: #{$dir};
+                        }
+                  } @else if $keyword == "row-reverse" {
+                        .flex-#{$mod} {
+                              #{$prop}: #{$dir};
+                        }
+                  } @else if $keyword == "block" {
+                        .#{$mod} {
+                              #{$prop}: #{$dir};
+                        }
+                  }
+            }
+      }
+}
+
+// Padding_Margin Mixins
+
+@mixin pm-generator($point, $mod) {
+      @each $s in $space {
+            @if $point == xs {
+                  @media screen and #{$xs} {
+                        .#{str-slice($mod, 0, 1)}-xs-#{$s} {
+                              #{$mod}: #{$s}px;
+                        }
+                        @each $p in $pos {
+                              .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-xs-#{$s} {
+                                    #{$mod}-#{$p}: #{$s}px;
+                              }
+                        }
+                  }
+            } @else if $point == sm {
+                  @media screen and #{$sm} {
+                        .#{str-slice($mod, 0, 1)}-sm-#{$s} {
+                              #{$mod}: #{$s}px;
+                        }
+                        @each $p in $pos {
+                              .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-sm-#{$s} {
+                                    #{$mod}-#{$p}: #{$s}px;
+                              }
+                        }
+                  }
+            } @else if $point == md {
+                  @media screen and #{$md} {
+                        .#{str-slice($mod, 0, 1)}-md-#{$s} {
+                              #{$mod}: #{$s}px;
+                        }
+                        @each $p in $pos {
+                              .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-md-#{$s} {
+                                    #{$mod}-#{$p}: #{$s}px;
+                              }
+                        }
+                  }
+            } @else if $point == lg {
+                  @media screen and #{$lg} {
+                        .#{str-slice($mod, 0, 1)}-lg-#{$s} {
+                              #{$mod}: #{$s}px;
+                        }
+                        @each $p in $pos {
+                              .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-lg-#{$s} {
+                                    #{$mod}-#{$p}: #{$s}px;
+                              }
+                        }
+                  }
+            } @else if $point == xl {
+                  @media screen and #{$xl} {
+                        .#{str-slice($mod, 0, 1)}-xl-#{$s} {
+                              #{$mod}: #{$s}px;
+                        }
+                        @each $p in $pos {
+                              .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-xl-#{$s} {
+                                    #{$mod}-#{$p}: #{$s}px;
+                              }
+                        }
+                  }
+            } @else if $point == "" {
+                  .#{str-slice($mod, 0, 1)}-#{$s} {
+                        #{$mod}: #{$s}px;
+                  }
+                  @each $p in $pos {
+                        .#{str-slice($mod, 0, 1)}#{str-slice($p, 0, 1)}-#{$s} {
+                              #{$mod}-#{$p}: #{$s}px;
+                        }
+                  }
+            }
+      }
+}
+
+// Font_Size
+
+// In px
+@mixin font-no($size) {
+      font-size: $size + $font-size + px;
+}
+
+// In Percent
+@mixin font-p($size) {
+      font-size: percentage($size/100);
+}
+
+// Col_Generator
+@mixin col-generator($point, $size) {
+      @for $i from 1 through $columns {
+            @if $point == "" and $size == "" {
+                  .col-#{$i} {
+                        max-width: ((100% / $columns) * $i);
+                        flex: 0 0 ((100% / $columns) * $i);
+                  }
+            } @else {
+                  @media screen and #{$point} {
+                        .col-#{$size}-#{$i} {
+                              max-width: ((100% / $columns) * $i);
+                              flex: 0 0 ((100% / $columns) * $i);
+                        }
+                  }
+            }
+      }
+}
+
+// Container
+
+@mixin screen($size) {
+      @if $size == desktop {
+            @media only screen and #{$lg} {
+                  @content;
+            }
+      } @else if $size == tablet {
+            @media only screen and #{$md} {
+                  @content;
+            }
+      } @else if $size == mobile {
+            @media only screen and #{$sm} {
+                  @content;
+            }
+      } @else {
+            @media only screen and #{$xs} {
+                  @content;
+            }
+      }
+}
+
+//font-face
+
+@mixin font-face($font-name, $file-name, $weight) {
+      @font-face {
+            font-family: $font-name;
+            font-weight: $weight;
+            src: url($file-name + ".eot");
+            src: url($file-name + ".eot?#iefix") format("embedded-opentype"), url($file-name + ".woff") format("woff"),
+                  url($file-name + ".ttf") format("truetype"), url($file-name + ".woff2") format("woff2");
+      }
+}
+
+// Border Mixin
+@mixin border(
+      $border-size: 1px,
+      $border-pattern: solid,
+      $border-color: black,
+      $border-position: all,
+      $border-clear: none
+) {
+      @if $border-position == all {
+            border: $border-size $border-pattern $border-color;
+      } @else {
+            border-#{$border-position}: $border-size $border-pattern $border-color;
+      }
+      @if $border-clear == none {
+            $border-position: all;
+      } @else {
+            border-#{$border-clear}: none;
+      }
+}
+
+/* Mixin Usage */
+// @include border(5px,solid,#0080FF,all); all
+// @include border(5px,solid,#0080FF,all,bottom); all less bottom
+// @include border(5px,dashed,#0080FF,top); just top
+
+// Transition Mixin
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+      -webkit-transition: $what $time $how;
+      -moz-transition: $what $time $how;
+      -ms-transition: $what $time $how;
+      -o-transition: $what $time $how;
+      transition: $what $time $how;
+}
+
+// Usage: @include transition(all,0.5s,ease-out);
+
+// triangle mixin
+@mixin triangle($size, $color, $direction) {
+      height: 0;
+      width: 0;
+
+      $width: nth($size, 1);
+      $height: nth($size, length($size));
+
+      $foreground-color: nth($color, 1);
+      $background-color: if(length($color) == 2, nth($color, 2), transparent);
+
+      @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+            $width: $width / 2;
+            $height: if(length($size) > 1, $height, $height/2);
+
+            @if $direction == up {
+                  border-bottom: $height solid $foreground-color;
+                  border-left: $width solid $background-color;
+                  border-right: $width solid $background-color;
+            } @else if $direction == right {
+                  border-bottom: $width solid $background-color;
+                  border-left: $height solid $foreground-color;
+                  border-top: $width solid $background-color;
+            } @else if $direction == down {
+                  border-left: $width solid $background-color;
+                  border-right: $width solid $background-color;
+                  border-top: $height solid $foreground-color;
+            } @else if $direction == left {
+                  border-bottom: $width solid $background-color;
+                  border-right: $height solid $foreground-color;
+                  border-top: $width solid $background-color;
+            }
+      } @else if ($direction == up-right) or ($direction == up-left) {
+            border-top: $height solid $foreground-color;
+
+            @if $direction == up-right {
+                  border-left: $width solid $background-color;
+            } @else if $direction == up-left {
+                  border-right: $width solid $background-color;
+            }
+      } @else if ($direction == down-right) or ($direction == down-left) {
+            border-bottom: $height solid $foreground-color;
+
+            @if $direction == down-right {
+                  border-left: $width solid $background-color;
+            } @else if $direction == down-left {
+                  border-right: $width solid $background-color;
+            }
+      } @else if ($direction == inset-up) {
+            border-color: $background-color $background-color $foreground-color;
+            border-style: solid;
+            border-width: $height $width;
+      } @else if ($direction == inset-down) {
+            border-color: $foreground-color $background-color $background-color;
+            border-style: solid;
+            border-width: $height $width;
+      } @else if ($direction == inset-right) {
+            border-color: $background-color $background-color $background-color $foreground-color;
+            border-style: solid;
+            border-width: $width $height;
+      } @else if ($direction == inset-left) {
+            border-color: $background-color $foreground-color $background-color $background-color;
+            border-style: solid;
+            border-width: $width $height;
+      }
+}
+
+// Usage: @include triangle(32px 24px, $green, left);
+
+// font-weight:
+
+@mixin font-weight($type) {
+      @each $c in $conversion-map {
+            .font-weight-#{$c} {
+                  font-weight: #{$c};
+            }
+      }
+}
+
+//text:
+@mixin text-align($mod) {
+      .text-#{$mod} {
+            text-align: #{$mod};
+      }
+}

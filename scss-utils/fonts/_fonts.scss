@@ -1,0 +1,5 @@
+@import './font-size';
+@import './font-weight';
+@include font-face(shabnam, "/fonts/shabnam/Shabnam-FD", $weight: normal);
+@include font-face(shabnam, "/fonts/shabnam/Shabnam-Bold-FD", $weight: bold);
+@include font-face(shabnam, "/fonts/shabnam/Shabnam-Light-FD", $weight: 300);

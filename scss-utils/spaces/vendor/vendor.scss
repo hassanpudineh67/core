@@ -1,0 +1,17 @@
+//Margin:
+
+@include pm-generator("", 'margin');
+@include pm-generator(xs, 'margin');
+@include pm-generator(sm, 'margin');
+@include pm-generator(md, 'margin');
+@include pm-generator(lg, 'margin');
+@include pm-generator(xl, 'margin');
+
+// Padding:
+
+@include pm-generator("", 'padding');
+@include pm-generator(xs, 'padding');
+@include pm-generator(sm, 'padding');
+@include pm-generator(md, 'padding');
+@include pm-generator(lg, 'padding');
+@include pm-generator(xl, 'padding');

@@ -1,0 +1,37 @@
+// Justify\
+
+$justify-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      around: space-around,
+      between: space-between,
+      evenly: space-evenly,
+);
+
+// Alignment
+
+$align-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+      baseline: baseline,
+);
+
+// Direction
+
+$flex-direction: (
+      row: row,
+      row-reverse: row-reverse,
+      column: column,
+      column-reverse: column-reverse,
+);
+
+// Wrap
+
+$flex-wrap: (
+      wrap: wrap,
+      wrap-reverse: wrap-reverse,
+      no-wrap: nowrap
+);

@@ -1,18 +1,20 @@
 <template>
-      <div class='container bg--green col-12 p-10 font-weight-100'>
-            تست تستیان
-      </div>      
+  <div class="container">
+    <input-text v-model="firstname" :icon_end='false' value="something" label="نام و نام خانوادگی" icon='123' color='#d3a'/>
+  </div>
 </template>
 
 <script>
-      export default {
-            name: 'container',
-            mounted(){
-                  
-            }
-      }
-</script>
+import InputText from '~/components/input-text/input-text';
 
-<style lang='scss'>
-      
-</style>
+export default {
+  components: {
+    InputText
+  },
+  data(){
+        return{
+              firstname:''
+        }
+  }
+}
+</script>

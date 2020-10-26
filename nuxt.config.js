@@ -38,7 +38,7 @@ export default {
       buildModules: ['@nuxtjs/style-resources'],
       modules: ['nuxt-purgecss'],
       styleResources: {
-            scss: ['~scss-utils/_variables/_vars.scss', '~mixins/_mixins.scss']
+            scss: ['~scss-utils/_variables/_vars.scss', '~scss-utils/mixins/_mixins.scss']
       },
       purgeCSS: purge,
       loading: { color: '#fff' },

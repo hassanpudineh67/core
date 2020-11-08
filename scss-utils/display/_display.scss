@@ -4,5 +4,3 @@
 @include flex_and_display_utility_generator("display", $display, md, 'block');
 @include flex_and_display_utility_generator("display", $display, lg, 'block');
 @include flex_and_display_utility_generator("display", $display, xl, 'block');
-
-@include font-weight(bold);

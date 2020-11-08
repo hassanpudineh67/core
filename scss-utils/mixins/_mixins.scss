@@ -290,6 +290,9 @@
       } @else {
             border-#{$border-clear}: none;
       }
+      @if $border-color == none {
+            $border-color: #000;
+      }
 }
 
 /* Mixin Usage */
@@ -391,5 +394,15 @@
 @mixin text-align($mod) {
       .text--#{$mod} {
             text-align: #{$mod};
+      }
+}
+
+// background-image
+
+@mixin background($position: 100% 100%, $repeat: no-repeat, $size:cover) {
+      background: {
+            position: $position;
+            repeat: $repeat;
+            size: $size
       }
 }

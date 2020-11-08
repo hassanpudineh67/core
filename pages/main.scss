@@ -1,0 +1,28 @@
+.intro {
+      width: 100%;
+      height: 100vh;
+      background: url('~@/static/images/intro-2.jpg') center center no-repeat;
+      background-size: cover;
+      nav {
+            color: #fff;
+            border-radius: $border-radius;
+            .navbar {
+                  :hover {
+                        cursor: pointer;
+                  }
+            }
+            .title {
+                  position: relative;
+                  ::before {
+                        content: "";
+                        position: absolute;
+                        right: 0px;
+                        top: -7px;
+                        height: 48px;
+                        width: 48px;
+                        background: url("~@/static/icons/personal_info.svg") center center no-repeat;
+                        background-size: cover;
+                  }
+            }
+      }
+}

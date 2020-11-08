@@ -7,8 +7,8 @@ module.exports = {
       MODES,
       getDefaults(options) {
             const defaults = {
-                  // mode: 'universal',
-                  enabled: true,
+                  mode: MODES.webpack,
+                  enabled: ({ isDev, isClient }) => (!isDev && isClient) ,
                   paths: [
                         'components/**/*.vue',
                         'layouts/**/*.vue',

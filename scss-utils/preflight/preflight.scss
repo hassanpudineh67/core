@@ -7,6 +7,9 @@
 /**
  * Removes the default spacing and border for appropriate elements.
  */
+body{
+      margin: 0;
+}
 
 blockquote,
 dl,
@@ -230,10 +233,10 @@ video {
 .container {
       margin: 0 auto;
       width: 100%;
-      @media screen and (max-width:575px) {
-            width: 90%;
-      }
-      @media screen and (min-width:992px) {
-            width: 95%;
-      }
+      // @media screen and (max-width:575px) {
+      //       width: 90%;
+      // }
+      // @media screen and (min-width:992px) {
+      //       width: 95%;
+      // }
 }

@@ -4,15 +4,18 @@ import purge from './configs/purge.conf'
 
 export default {
       server: {
-            port: 3000,
+            port: 3333,
             host: '0.0.0.0', // default: localhost,
       },
-      baseUrl: '/',
+      // baseUrl: '/',
       router: {
             base: '/',
             extendRoutes(routes, resolve) {
 
             }
+      },
+      axios: {
+            // proxy: true
       },
       htmlAttrs: {
             lang: 'fa',
@@ -27,16 +30,13 @@ export default {
                   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             ],
       },
-      loading: {
-            color: '#f7941e',
-            height: '3px'
-      },
+      loading: '~/components/loading/loading.vue',
       css: ['./scss-utils/main.scss'],
       plugins: [
 
       ],
       buildModules: ['@nuxtjs/style-resources'],
-      modules: ['nuxt-purgecss'],
+      modules: ['nuxt-purgecss', '@nuxtjs/axios'],
       styleResources: {
             scss: ['~scss-utils/_variables/_vars.scss', '~scss-utils/mixins/_mixins.scss']
       },
@@ -48,7 +48,7 @@ export default {
             }
       },
       build: {
-            extractCSS: true,
+            extractCSS: {allChunks:true},
             plugins: [
                   new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fa/)
             ]

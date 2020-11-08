@@ -1,5 +1,5 @@
 ::placeholder {
-      opacity: 0.6;
+      opacity: 0.5;
       font-family: shabnam;
 }
 
@@ -7,8 +7,9 @@ input[type="text"] {
       color: #555;
       width: 100%;
       box-sizing: border-box;
-      letter-spacing: 1px;
       outline: none;
+      padding-right: 10px;
+      font-family: shabnam;
 }
 
 .input__container {
@@ -22,11 +23,6 @@ input[type="text"] {
       position: relative;
 } /* necessary to give position: relative to parent. */
 
-.input__icon {
-      position: relative;
-      top: -3.5rem;
-      opacity: 0.3;
-}
 .input__hint {
       float: left;
       width: 100%;
@@ -41,20 +37,24 @@ input[type="text"] {
 }
 
 .effect {
-      border-radius: $border-radius;
       padding: 10px 0;
-      @include border(1px, solid, #ddd, all);
       background-color: transparent;
+      border-bottom: 1px solid #ddd;
+}
+.not__linear {
+      @include border(1px, solid, map-get($gray, "gray-200"), all);
+      border-radius: $border-radius;
 }
 
 .effect ~ .focus__border {
       position: absolute;
-      bottom: 0;
+      bottom: 28px;
       left: 0;
       width: 0;
-      height: 2px;
-      background-color: indigo;
+      height: 1px;
+      background-color: $main;
       transition: 0.4s;
+      border-bottom: 1px solid;
 }
 
 .effect:focus ~ .focus__border,
@@ -65,27 +65,15 @@ input[type="text"] {
 
 .effect ~ label {
       position: absolute;
-      left: 0;
-      width: 100%;
-      top: -1.3rem;
+      text-align: center;
+      font-size: 13px;
       transition: 0.3s;
-      z-index: -1;
-      letter-spacing: 0.5px;
-}
-
-.effect:focus ~ label,
-.has__content.effect ~ label {
-      top: -1rem;
-      font-size: 12px;
-      color: indigo;
-      transition: 0.3s;
+      z-index: 0;
+      background: #fff;
 }
 
 .end--icon {
-      right: 98%;
-      @media screen and #{$xs} {
-            right: 10%;
-      }
+      right: calc(100% + -38px);
 }
 
 .start--icon {
@@ -93,4 +81,22 @@ input[type="text"] {
       @media screen and #{$xs} {
             right: 3%;
       }
+}
+
+.input__icon {
+      position: relative;
+      top: -30px;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      @include background();
+}
+
+.label_linear {
+      right: -6px;
+      top: -11px;
+}
+.label_not_linear {
+      right: 13px;
+      top: -6px;
 }

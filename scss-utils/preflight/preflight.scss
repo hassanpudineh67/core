@@ -233,6 +233,7 @@ video {
 .container {
       margin: 0 auto;
       width: 100%;
+      overflow: hidden;
       // @media screen and (max-width:575px) {
       //       width: 90%;
       // }

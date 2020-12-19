@@ -1,34 +1,36 @@
 <template>
       <div class="container">
-            <div class="intro bg--gray-100">
-                  <nav class="flex align-center justify-between p-20">
-                        <div class="title mr-10">
-                              <span class="font-24 mr-75 font--weight-600">وب سایت شخصی حسن پودینه</span>
+            <intro-loading v-if="loading"/>
+            <div v-else>
+                  <div class="row">
+                        <div class="col-12">
+                              <Header/>
                         </div>
-                        <ul class="navbar flex">
-                              <li class="navbar--home ml-25">صفحه اصلی</li>
-                              <li class="navbar--projects ml-25">
-                                    پروژه های من
-                              </li>
-                              <li class="nacbar--about ml-25">درباره ی من</li>
-                              <li class="navbar--contact ml-10">تماس با من</li>
-                        </ul>
-                  </nav>
+                  </div>
             </div>
-      </div>
+      </div>      
 </template>
 
 <script>
+import Header from "~/components/custom/header/header";
+import IntroLoading from '~/components/intro-loading/intro-loading';
+
 export default {
-      components: {},
+      components: { IntroLoading, Header },
       data() {
-            return {};
+            return {
+                  loading: true,
+            };
       },
-      async mounted() {},
+      async mounted() {
+            setTimeout(() => {
+                  this.loading = false;
+            }, 1000);
+      },
       methods: {},
 };
 </script>
 
 <style lang="scss">
-@import "./main";
+      @import "./main";
 </style>

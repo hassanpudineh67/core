@@ -1,0 +1,9 @@
+.VueCarousel-slide {
+  
+}
+
+.slider-item{
+  width: 100%;
+  height: 70vh;
+  @include background();
+}

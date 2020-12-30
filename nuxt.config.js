@@ -21,9 +21,9 @@ export default {
             // proxy: true
       },
       htmlAttrs: {
-            lang: 'fa',
-            dir: 'rtl',
-            translate: "no"
+            //lang: 'fa',
+            //dir: 'rtl',
+            //translate: "no"
       },
       pageTransition: 'fade',
       layoutTransition: 'fade',
@@ -37,7 +37,7 @@ export default {
       css: ['./scss-utils/main.scss'],
       plugins: [
             { src: '~/plugins/carousel', mode: 'client', ssr: false },
-      ]
+      ],
       buildModules: ['@nuxtjs/style-resources'],
       modules: [
             'nuxt-purgecss',

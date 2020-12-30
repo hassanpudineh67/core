@@ -20,6 +20,8 @@ export default {
       methods: {
             onChange(event) {
                   this.$router.replace(this.switchLocalePath(event));
+                  if(event == 'en') document.body.setAttribute('dir', 'ltr');
+                  else document.body.setAttribute('dir', 'rtl');
             },
       },
 };

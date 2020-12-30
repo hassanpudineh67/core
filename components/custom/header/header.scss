@@ -1,42 +1,4 @@
 .header {
       width: 100%;
       @include background();
-
-      nav {
-            color: #fff;
-            border-radius: $border-radius;
-
-            .active {
-                  color: $main;
-            }
-
-            .navbar {
-                  padding: 16px;
-                  border-radius: $border-radius;
-
-                  &:hover {
-                        cursor: pointer;
-                        border-radius: $border-radius;
-                        transition:  border-radius .5s;
-                  }
-
-                  li {
-                        color: $primary;
-                  }
-
-                  .hire {
-                        margin: auto;
-                        background: #fd9a35;
-                        color: #fff;
-                        padding: 4px 12px;
-                        border-radius: 24px;
-                        text-align: center;
-                  }
-            }
-
-            .logo {
-                  width: 2.5%;
-            }
-
-      }
 }

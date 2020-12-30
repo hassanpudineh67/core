@@ -1,5 +1,5 @@
 <template>
-      <div class="header">
+      <div class="header flex align-center justify-around">
             <nav class="flex align-center justify-center p-5">
                   <img class="logo" src="/icons/logo.svg" alt="logo">
                   <ul class="navbar flex">
@@ -7,8 +7,13 @@
                               {{$t(item.title)}}
                         </li>
                   </ul>
-                  <langNavigation/>
             </nav>
+            <div class="side-items flex align-center">
+                  <div class="submit-project">
+                        <p class="m-10">ثبت پروژه</p>
+                  </div>
+                  <langNavigation/>
+            </div>
       </div>
 </template>
 
@@ -21,10 +26,9 @@
                   return {
                         activeTab : 'home',
                         nav_items: [
-                              {class: 'p-10 ml-25', tab_name : 'home', title: 'pages.home'},
-                              {class: 'p-10 ml-25', tab_name : 'contact', title: 'pages.contact'},
-                              {class: 'p-10 ml-25', tab_name : 'about', title: 'pages.about'},
-                              {class: 'hire ml-10', tab_name : 'hire', title: 'pages.hire'},
+                              {class: 'p-10', tab_name : 'home', title: 'nav.home'},
+                              {class: 'p-10', tab_name : 'contact', title: 'nav.contact'},
+                              {class: 'p-10', tab_name : 'about', title: 'nav.about'}
                         ]
                   }
             }

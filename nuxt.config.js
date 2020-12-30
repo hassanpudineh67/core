@@ -20,11 +20,6 @@ export default {
       axios: {
             // proxy: true
       },
-      htmlAttrs: {
-            //lang: 'fa',
-            //dir: 'rtl',
-            //translate: "no"
-      },
       pageTransition: 'fade',
       layoutTransition: 'fade',
       head: {

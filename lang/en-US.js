@@ -1,5 +1,5 @@
 export default {
-      pages: {
+      nav: {
             home: 'Home',
             contact: 'Contact me',
             about: 'About me',

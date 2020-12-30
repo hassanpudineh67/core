@@ -1,22 +1,17 @@
 <template>
-      <div class="container">
+      <div>
             <intro-loading v-if="loading"/>
-            <div v-else>
-                  <div class="row">
-                        <div class="col-12">
-                              <Header/>
-                        </div>
-                  </div>
+            <div class="content" v-else>
+                  
             </div>
-      </div>      
+      </div>
 </template>
 
 <script>
-import Header from "~/components/custom/header/header";
 import IntroLoading from '~/components/intro-loading/intro-loading';
 
 export default {
-      components: { IntroLoading, Header },
+      components: { IntroLoading },
       data() {
             return {
                   loading: true,
@@ -25,9 +20,8 @@ export default {
       async mounted() {
             setTimeout(() => {
                   this.loading = false;
-            }, 1000);
-      },
-      methods: {},
+            }, 2000);
+      }
 };
 </script>
 

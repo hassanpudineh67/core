@@ -1,27 +1,31 @@
 <template>
-       <div class="intro">
-            <nav class="flex align-center justify-between p-5">
-                  <div class="title mr-10">
-                        <span class="font-24 mr-75 font--weight-600">LOGO</span>
-                  </div>
+      <div class="header">
+            <nav class="flex align-center justify-center p-5">
+                  <img class="logo" src="/icons/logo.svg" alt="logo">
                   <ul class="navbar flex">
-                        <li class="home p-10 ml-25" @click="activeTab='home'" :class="{'active':activeTab == 'home'}">صفحه اصلی</li>
-                        <li class="projects p-10 ml-25" @click="activeTab='projects'" :class="{'active':activeTab == 'projects'}">
-                              پروژه های من
+                        <li v-for="(item, index) in nav_items" :key="`item-${index}`" @click="activeTab = nav_items[index].tab_name == 'hire' ? '' : nav_items[index].tab_name;" :class="[(item.class), (activeTab == nav_items[index].tab_name ? 'active' : '')]">
+                              {{$t(item.title)}}
                         </li>
-                        <li class="about p-10 ml-25" @click="activeTab='about'" :class="{'active':activeTab == 'about'}">درباره ی من</li>
-                        <li class="contact p-10 ml-10" @click="activeTab='contact'" :class="{'active':activeTab == 'contact'}">تماس با من</li>
                   </ul>
+                  <langNavigation/>
             </nav>
       </div>
 </template>
 
 <script>
+      import langNavigation from '~/components/custom/langNavigation/langNavigation';
       export default {
             name: 'container',
+            components: {langNavigation},
             data(){
                   return {
-                        activeTab : 'home'
+                        activeTab : 'home',
+                        nav_items: [
+                              {class: 'p-10 ml-25', tab_name : 'home', title: 'pages.home'},
+                              {class: 'p-10 ml-25', tab_name : 'contact', title: 'pages.contact'},
+                              {class: 'p-10 ml-25', tab_name : 'about', title: 'pages.about'},
+                              {class: 'hire ml-10', tab_name : 'hire', title: 'pages.hire'},
+                        ]
                   }
             }
       }

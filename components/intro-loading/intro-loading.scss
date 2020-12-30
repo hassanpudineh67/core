@@ -1,8 +1,12 @@
 .intro-loading {
-      height: 100vh;
+      min-height: 90vh;
+      position: relative;
+      z-index: 20;
+      
       .loading {
             height: 120px;
             width: 120px;
+
             .loader {
                   max-width: 15rem;
                   width: 100%;

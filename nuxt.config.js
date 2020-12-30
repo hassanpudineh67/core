@@ -37,9 +37,31 @@ export default {
       css: ['./scss-utils/main.scss'],
       plugins: [
             { src: '~/plugins/carousel', mode: 'client', ssr: false },
-      ],
+      ]
       buildModules: ['@nuxtjs/style-resources'],
-      modules: ['nuxt-purgecss', '@nuxtjs/axios'],
+      modules: [
+            'nuxt-purgecss',
+            '@nuxtjs/axios',
+            ['nuxt-i18n', {
+                  locales: [
+                        {
+                              name: 'فارسی',
+                              code: 'fa',
+                              iso: 'fa-IR',
+                              file: 'fa-IR.js'
+                        },
+                        {
+                              name: 'English',
+                              code: 'en',
+                              iso: 'en-US',
+                              file: 'en-US.js'
+                        },
+                  ],
+                  lazy: true,
+                  langDir: 'lang/',
+                  defaultLocale: 'fa',
+            }]
+      ],
       styleResources: {
             scss: ['~scss-utils/_variables/_vars.scss', '~scss-utils/mixins/_mixins.scss']
       },
@@ -71,7 +93,7 @@ export default {
                         }
                   })
             },
-            extractCSS: {allChunks:true},
+            extractCSS: { allChunks: true },
             // publicPath: 'https://cdn.nuxtjs.org',    
             plugins: [
                   new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fa/),
